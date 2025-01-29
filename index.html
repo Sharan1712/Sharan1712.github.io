@@ -92,7 +92,7 @@
         }
 
         .about-section, .projects-section, .contact-section {
-            padding: 180px 20px;
+            padding: calc(var(--header-height) + 30px) 20px;
         }
 
         .contact-section p {
@@ -228,8 +228,12 @@
         }
 
         @media (max-width: 768px) {
+            :root {
+                --header-height: 120px; /* Adjust header height for mobile */
+            }
+
             .about-section, .projects-section, .contact-section {
-                padding: 120px 15px; /* Adjusted padding for smaller screens */
+                padding: calc(var(--header-height) + 20px) 15px; /* Adjusted padding for smaller screens */
             }
             
             .about-section h1, .projects-section h1, .contact-section h1 {
