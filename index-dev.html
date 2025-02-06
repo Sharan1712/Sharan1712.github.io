@@ -91,8 +91,12 @@
             opacity: 0.9;
         }
 
-        .about-section, .projects-section, .contact-section {
+        .about-section {
             padding: calc(var(--header-height)) 20px;
+        }
+
+        .projects-section, .contact-section {
+            padding: calc(var(--header-height));
         }
 
         .contact-section p {
@@ -234,7 +238,7 @@
             }
 
             .about-section, .projects-section, .contact-section {
-                padding: calc(var(--header-height) + 20px) 15px; /* Adjusted padding for smaller screens */
+                padding: calc(var(--header-height) + 40px) 15px; /* Adjusted padding for smaller screens */
             }
             
             .about-section h1, .projects-section h1, .contact-section h1 {
