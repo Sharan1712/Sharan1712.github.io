@@ -267,14 +267,40 @@
                                 <img src="icons/github.png" alt="GitHub"> Implementation
                             </a>
                             <a href="https://huggingface.co/spaces/Sharan1712/PitchPerfect" target="_blank" rel="noopener noreferrer">
-                                <img src="icons/hf.png" alt="Hugging Face Spaces"> HuggingFace Space
+                                <img src="icons/hf.png" alt="Hugging Face Spaces"> HF Space
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+
+         <!-- Expander Button -->
+         <button class="btn btn-primary w-100 mt-3" id="toggleProjects">Show More Projects</button>
+        
+         <!-- Additional Projects (Initially Hidden) -->
+         <div class="additional-projects mt-3" id="extraProjects" style="display: none;">
+             <p><strong style="font-size: 1.25rem;">Multi Agent Article Writer</strong> (In Progress)</p>
+             <p>This App is a multi-agent framework that automates content creation, mimicking a professional writing team. It leverages CrewAI & LLMs to plan, write, and edit articles efficiently, streamlining the content generation process.</p>
+             <p><a href="#" class="btn btn-light btn-sm"><img src="icons/github.png" alt="GitHub" width="22px" height="22px"> GitHub Repo</a></p>
+             <hr>
+         </div>
+
         </div>
     </section>
+
+    <script>
+        document.getElementById("toggleProjects").addEventListener("click", function() {
+            var extraProjects = document.getElementById("extraProjects");
+            if (extraProjects.style.display === "none" || extraProjects.style.display === "") {
+                extraProjects.style.display = "block";
+                this.textContent = "Show Less";
+            } else {
+                extraProjects.style.display = "none";
+                this.textContent = "Show More Projects";
+            }
+        });
+    </script>
+    
 
     <section class="contact-section">
         <h1>Contact</h1>
