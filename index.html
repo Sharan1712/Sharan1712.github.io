@@ -102,6 +102,52 @@
             object-fit: cover;
         }
 
+        .section-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #1f1f1f;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+        .timeline-item {
+            margin-bottom: 25px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .timeline-item img {
+            width: 80px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        .timeline-date {
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .collapse-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+
         .card {
             background-color: #1f1f1f;
             color: #f0f0f0;
@@ -257,6 +303,59 @@
             <p></p>
         </div> -->
     </section>
+
+    <button class="collapse-btn" id="toggleMoreInfo">More About Me</button>
+
+        <div class="collapse" id="timelineCollapse">
+            <section class="section-container">
+                <div class="section-title">Work Experience</div>
+                <div class="timeline-item">
+                    <a href="https://www.basf.com/global/en" target="_blank" rel="noopener noreferrer"><img src="images/about/basf.png" alt="BASF"></a>
+                    <div class="timeline-date">Feb 2023 – Jan 2025</div>
+                    <div>Supply Chain Digitalization</div>
+                </div>
+                <div class="timeline-item">
+                    <a href="https://equitydatascience.com/" target="_blank" rel="noopener noreferrer"><img src="images/about/eds.png" alt="EDS"></a>
+                    <div class="timeline-date">Sept 2020 – Jan 2023</div>
+                    <div>Quantitative Analyst & Consultant</div>
+                    
+                </div>
+                <!-- <div class="timeline-item">
+                    <div class="timeline-date">Apr 2020 – Aug 2020</div>
+                    <div>ML Intern</div>
+                    <a href="LINK"><img src="images/company_name.png" alt="Company"></a>
+                </div> -->
+            </section>
+
+            <section class="section-container">
+                <div class="section-title">Education</div>
+                <div class="timeline-item">
+                    <a href="https://www.uni-mannheim.de/studium/vor-dem-studium/studienangebot/mannheim-master-in-data-science/" target="_blank" rel="noopener noreferrer"><img src="images/about/mannheim.webp" alt="University of Mannheim"></a>
+                    <div class="timeline-date">Feb 2022 – Sept 2024</div>
+                    <div>Masters in Data Science</div>
+                </div>
+                <div class="timeline-item">
+                    <a href="https://mathematics.nmims.edu/academics/programs/bsc-applied-statistics-and-analytics/" target="_blank" rel="noopener noreferrer"><img src="images/about/nmims.png" alt="NMIMS University"></a>
+                    <div class="timeline-date">July 2017 – May 2020</div>
+                    <div>BSc in Applied Statistics and Analytics</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("toggleMoreInfo").addEventListener("click", function() {
+            var extraProjects = document.getElementById("timelineCollapse");
+            if (extraProjects.style.display === "none" || extraProjects.style.display === "") {
+                extraProjects.style.display = "block";
+                this.textContent = "Show Less";
+            } else {
+                extraProjects.style.display = "none";
+                this.textContent = "More About me";
+            }
+        });
+    </script>
+
     <hr> 
     <section class="projects-section">
         <h1>Projects</h1>
@@ -337,7 +436,7 @@
             </div>
 
          <!-- Expander Button -->
-         <button class="btn btn-primary w-100 mt-3" id="toggleProjects">Show More Projects</button>
+         <button class="collapse-btn" id="toggleProjects">Show More Projects</button>
         
          <!-- Additional Projects (Initially Hidden) -->
          <div class="additional-projects mt-3" id="extraProjects" style="display: none;">
